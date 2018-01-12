@@ -1,0 +1,21 @@
+{% extends 'room_booking/base.html' %}
+
+{% block content %}
+<form method="post">
+    {%	csrf_token	%}
+    <label>Name:
+        <input type="text" maxlength="128" name="name" value="{{ room.name }}">
+    </label>
+    <br>
+    <label>Capacity:
+        <input type="number" min="1" name="capacity" value="{{ room.capacity }}">
+    </label>
+    <br>
+
+    <label>Projector:
+        <input type="checkbox" name="projector" {% if room.projector %} checked {% endif %}>
+    </label>
+    <br>
+    <input type="submit" value="edit">
+</form>
+{% endblock %}

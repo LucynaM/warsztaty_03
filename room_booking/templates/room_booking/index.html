@@ -1,0 +1,19 @@
+{% extends 'room_booking/base.html' %}
+
+{% block content %}
+<h2><span>Rooms</span></h2>
+<table>
+    {% for room in rooms %}
+    <tr>
+        <td><a href="{% url 'room_booking:room_details' room.id %}"><span>{{ room.name }}</span></a></td>
+        <td><a href="{% url 'room_booking:room_reserve' room.id %}">{{ room.reserved }}</a></td>
+        <td><a href="{% url 'room_booking:room_edit' room.id %}">Edit</a></td>
+        <td><a href="{% url 'room_booking:room_delete' room.id %}">Delete</a></td>
+    </tr>
+    {% empty %}
+    <li>There's no room yet</li>
+    {% endfor %}
+</table>
+<li><a href="{% url 'room_booking:room_new' %}">Add new</a></li>
+<li><a href="{% url 'room_booking:room_search' %}">Search room</a></li>
+{% endblock content %}

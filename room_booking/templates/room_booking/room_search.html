@@ -1,0 +1,30 @@
+{% extends 'room_booking/base.html' %}
+
+{% block content %}
+<form method="post">
+    {%	csrf_token	%}
+    <label>Select date:
+        <input type="date" name="reservation_date">
+    </label><br>
+    <label>Number of people:
+        <input type="number" name="capacity">
+    </label><br>
+    <label>Projector:
+        <input type="checkbox" name="projector">
+    </label><br>
+    <input type="submit" value="search">
+</form>
+{% if err_msg %}
+<p>{{ err_msg }}</p>
+{% endif %}
+<ul>
+    {% if open_rooms %}
+    {% for open_room in open_rooms %}
+    <li>Room: {{ open_room.name }}, capacity: {{ open_room.capacity }}, projector: {% if open_room.projector %}yes {% else %}no {% endif %}
+        <a href="{% url 'room_booking:room_reserve' open_room.id %}">Reserve</a></li>
+    {% empty %}
+    <li>No data satisfying selection criteria exists</li>
+    {% endfor %}
+    {% endif %}
+</ul>
+{% endblock %}

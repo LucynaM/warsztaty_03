@@ -1,0 +1,23 @@
+{% extends 'room_booking/base.html' %}
+
+{% block content %}
+<form method="post">
+    {%	csrf_token	%}
+    <label>Name:
+        <input type="text" maxlength="128" name="name">
+    </label>
+    <br>
+    <label>Capacity:
+        <input type="number" min="1" name="capacity">
+    </label>
+    <br>
+    <label>Projector:
+        <input type="checkbox" name="projector">
+    </label>
+    <br>
+    <input type="submit" value="create">
+</form>
+{% if err_msg %}
+<p>{{ err_msg }}</p>
+{% endif %}
+{% endblock %}

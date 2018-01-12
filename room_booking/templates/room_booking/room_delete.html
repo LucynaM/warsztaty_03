@@ -1,0 +1,9 @@
+{% extends 'room_booking/base.html' %}
+
+{% block content %}
+<p>Are you sure you want to delete room {{ room.name }}?</p>
+<form action="#" method="post">
+    {%	csrf_token	%}
+    <input type="submit" value="delete">
+</form>
+{% endblock %}

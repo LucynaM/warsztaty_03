@@ -1,0 +1,55 @@
+form {
+    padding-top: 20px;
+}
+input, textarea {
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    }
+input[type=submit], input[type=submit]:focus, input[type=checkbox], input[type=checkbox]:focus {
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    padding: 5px 25px;
+    margin: 15px 0px 15px;
+    font-size: .8em;
+    width: auto;
+    }
+input:focus, select:focus {
+    border: 1px solid lightgrey;
+    }
+label, h2, h4, li {
+    color: grey;
+    font-weight: 300;
+    display: block;
+    }
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+li {
+    margin: 5px 0px;
+}
+
+a {
+    color: darkslategrey;
+}
+
+td {
+    padding: 10px;
+}
+
+span {
+    font-weight: bold;
+}
